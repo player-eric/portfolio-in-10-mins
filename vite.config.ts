@@ -3,9 +3,10 @@ import { defineConfig } from "vite";
 import tsconfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig({
+  base: "/portfolio-in-10-mins/",
   plugins: [
     remix({
-      basename: "/portfolio-in-10-mins",
+      basename: "/portfolio-in-10-mins/",
       ssr: false,
       future: {
         v3_fetcherPersist: true,
