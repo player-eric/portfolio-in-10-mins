@@ -5,9 +5,16 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
-import "./tailwind.css";
+import { Navbar } from "./components/Navbar";
+import stylesheet from "~/tailwind.css?url";
+import { LinksFunction } from "@remix-run/node";
 
-export function Layout({ children }: { children: React.ReactNode }) {
+export const links: LinksFunction = () => [
+  { rel: "stylesheet", href: stylesheet },
+  { rel: "icon", href: "configs/icon.png" },
+];
+
+export default function App() {
   return (
     <html lang="en">
       <head>
@@ -16,19 +23,16 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Meta />
         <Links />
       </head>
-      <body>
-        {children}
+      <body className="flex flex-col min-h-screen bg-[#FFE591]">
+        <Navbar />
+
+        <div className="w-5/6 mx-auto">
+          <Outlet />
+        </div>
+
         <ScrollRestoration />
         <Scripts />
       </body>
     </html>
   );
-}
-
-export default function App() {
-  return <Outlet />;
-}
-
-export function HydrateFallback() {
-  return <p>Loading...</p>;
 }
