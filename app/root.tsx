@@ -14,7 +14,7 @@ export const links: LinksFunction = () => [
   { rel: "icon", href: "configs/icon.png" },
 ];
 
-export default function App() {
+export function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <head>
@@ -26,13 +26,23 @@ export default function App() {
       <body className="flex flex-col min-h-screen bg-[#FFE591]">
         <Navbar />
 
-        <div className="w-5/6 mx-auto">
-          <Outlet />
-        </div>
+        {children}
 
         <ScrollRestoration />
         <Scripts />
       </body>
     </html>
   );
+}
+
+export default function App() {
+  return (
+    <div className="w-5/6 mx-auto">
+      <Outlet />
+    </div>
+  );
+}
+
+export function HydrateFallback() {
+  return <p>Loading...</p>;
 }
