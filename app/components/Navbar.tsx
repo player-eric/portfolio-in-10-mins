@@ -57,7 +57,7 @@ export function Navbar() {
       className={`bg-[${configs.colors.primary}] text-2xl rounded-b-2xl font-blackOpsOne flex justify-between items-center px-4 py-2 sticky top-0 z-50`}
     >
       <Link to="/" className="flex items-center">
-        <img src="icon.png" alt="icon" className="w-9 h-9 mr-2" />
+        <img src="pictures/icon.png" alt="icon" className="w-9 h-9 mr-2" />
         <span className="font-bold text-black">{configs.navBar.name}</span>
       </Link>
       <div className="hidden lg:flex space-x-6">

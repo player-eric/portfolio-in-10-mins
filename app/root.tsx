@@ -12,7 +12,7 @@ import configs from "./configs/configs";
 
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: stylesheet },
-  { rel: "icon", href: "icon.png" },
+  { rel: "icon", href: "pictures/icon.png" },
 ];
 
 export function Layout({ children }: { children: React.ReactNode }) {

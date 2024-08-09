@@ -24,4 +24,8 @@ export interface Configs {
     name: string;
     contacts: Record<ContactOptions, string>;
   };
+  aboutPage: {
+    greeting: string;
+    content: string;
+  };
 }
