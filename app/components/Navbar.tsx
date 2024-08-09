@@ -58,7 +58,9 @@ export function Navbar() {
     >
       <Link to="/" className="flex items-center">
         <img src="pictures/icon.png" alt="icon" className="w-9 h-9 mr-2" />
-        <span className="font-bold text-black">{configs.navBar.name}</span>
+        <span className="font-bold text-black hidden sm:block">
+          {configs.navBar.name}
+        </span>
       </Link>
       <div className="hidden lg:flex space-x-6">
         {configs.routes.map((route, index) => (
