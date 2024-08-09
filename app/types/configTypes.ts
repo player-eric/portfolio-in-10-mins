@@ -16,6 +16,8 @@ type RouteOptions =
 
 export interface Configs {
   routes: RouteOptions[];
-  name: string;
-  contacts: Record<ContactOptions, string>;
+  navBar: {
+    name: string;
+    contacts: Record<ContactOptions, string>;
+  };
 }
