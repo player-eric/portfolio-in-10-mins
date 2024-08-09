@@ -2,6 +2,10 @@ import { Configs } from "~/types/configTypes";
 
 const configs: Configs = {
   routes: ["about", "experience", "skills", "projects", "footprints"],
+  colors: {
+    primary: "#FFD562",
+    background: "#FFE591",
+  },
   navBar: {
     name: "Shiqin Yan",
     contacts: {

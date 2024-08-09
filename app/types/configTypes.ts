@@ -16,6 +16,10 @@ type RouteOptions =
 
 export interface Configs {
   routes: RouteOptions[];
+  colors: {
+    primary: string;
+    background: string;
+  };
   navBar: {
     name: string;
     contacts: Record<ContactOptions, string>;

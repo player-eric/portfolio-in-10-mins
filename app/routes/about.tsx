@@ -18,8 +18,10 @@ export const meta: MetaFunction = () => {
 
 export default function About() {
   return (
-    <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }}>
-      <h1>TODO ABOUT</h1>
+    <div className="w-full h-[93vh] flex">
+      <div
+        className={`bg-[${configs.colors.primary}] w-full h-3/4 my-auto mx-auto`}
+      ></div>
     </div>
   );
 }

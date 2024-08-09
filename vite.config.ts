@@ -13,6 +13,14 @@ export default defineConfig({
     remix({
       basename: "/portfolio-in-10-mins/",
       ssr: false,
+      routes(defineRoutes) {
+        return defineRoutes((route) => {
+          route("/", "routes/_index.tsx", { index: true });
+          configs.routes.forEach((routeName) => {
+            route(routeName, `routes/${routeName}.tsx`);
+          });
+        });
+      },
       buildEnd(args) {
         if (!args.viteConfig.isProduction) return;
         // When deploying to GitHub Pages, if you navigate from / to another
@@ -28,14 +36,6 @@ export default defineConfig({
           join(buildPath, "index.html"),
           join(buildPath, "404.html")
         );
-      },
-      routes(defineRoutes) {
-        return defineRoutes((route) => {
-          route("/", "routes/_index.tsx", { index: true });
-          configs.routes.forEach((routeName) => {
-            route(routeName, `routes/${routeName}.tsx`);
-          });
-        });
       },
       future: {
         v3_fetcherPersist: true,

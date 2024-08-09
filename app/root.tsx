@@ -8,6 +8,7 @@ import {
 import { Navbar } from "./components/Navbar";
 import stylesheet from "~/tailwind.css?url";
 import { LinksFunction } from "@remix-run/node";
+import configs from "./configs/configs";
 
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: stylesheet },
@@ -23,7 +24,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Meta />
         <Links />
       </head>
-      <body className="flex flex-col min-h-screen bg-[#FFE591]">
+      <body
+        className={`flex flex-col min-h-screen bg-[${configs.colors.background}]`}
+      >
         <Navbar />
 
         {children}
