@@ -40,7 +40,7 @@ export default function Skills() {
           ></SkillCard>
         ))}
       </div>
-      <div className="mt-12">
+      <div className="mt-6 md:mt-12 grid grid-cols-2">
         {skillsWithoutIcons.map((skill) => (
           <div className="w-full flex justify-center my-4">
             <SkillTab name={skill.name}></SkillTab>
