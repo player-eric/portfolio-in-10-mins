@@ -44,5 +44,9 @@ export default function App() {
 }
 
 export function HydrateFallback() {
-  return <p>Loading...</p>;
+  return (
+    <div className="w-full flex items-center">
+      <h1>Loading...</h1>
+    </div>
+  );
 }
