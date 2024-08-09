@@ -1,9 +1,18 @@
 import type { MetaFunction } from "@remix-run/node";
 
+import configs from "~/configs/configs";
+
 export const meta: MetaFunction = () => {
   return [
-    { title: "AA" },
-    { name: "description", content: "Welcome to my portfolio" },
+    { title: `${configs.navBar.name} | About` },
+    { name: "description", content: `${configs.navBar.name} personal website` },
+    {
+      name: "keywords",
+      content: `personal, website, about, profile ${configs.navBar.name}`,
+    },
+    { name: "author", content: configs.navBar.name },
+    { name: "robots", content: "index, follow" },
+    { name: "viewport", content: "width=device-width, initial-scale=1" },
   ];
 };
 
