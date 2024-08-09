@@ -88,7 +88,7 @@ const FootPrintMap: React.FC<FootPrintMapProps> = ({
           <Marker
             icon={
               new Icon({
-                iconUrl: "/resources/pin.png",
+                iconUrl: "resources/pin.png",
                 iconSize: [18, 18],
                 className: "footprint-without-image-icon",
               })
