@@ -41,4 +41,11 @@ export interface Configs {
     iconFileName?: string;
     name: string;
   }[];
+  projectsPage?: {
+    title: string;
+    description: string;
+    link?: string;
+    pictureFileName?: string;
+    skills?: string;
+  }[];
 }

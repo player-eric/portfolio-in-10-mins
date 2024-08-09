@@ -134,6 +134,23 @@ const configs: Configs = {
       name: "Kubernetes",
     },
   ],
+  projectsPage: [
+    {
+      title: "Project 1",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed interdum lacus sit amet rhoncus fringilla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed interdum lacus sit amet rhoncus fringilla.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed interdum lacus sit amet rhoncus fringilla.",
+      link: "https://www.google.com",
+      pictureFileName: "avatar.jpg",
+      skills: "React, TypeScript",
+    },
+    {
+      title: "Project 2",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed interdum lacus sit amet rhoncus fringilla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed interdum lacus sit amet rhoncus fringilla.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed interdum lacus sit amet rhoncus fringilla.",
+      link: "https://www.google.com",
+      skills: "React, TypeScript",
+    },
+  ],
 };
 
 export default configs;
