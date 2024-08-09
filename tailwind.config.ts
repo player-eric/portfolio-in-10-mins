@@ -6,6 +6,7 @@ export default {
     extend: {
       fontFamily: {
         blackOpsOne: ["BlackOpsOne", "sans-serif"],
+        courierPrime: ["CourierPrime", "monospace"],
       },
     },
   },
