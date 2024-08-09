@@ -8,7 +8,7 @@ export const meta: MetaFunction = () => {
     { name: "description", content: `about ${configs.navBar.name}` },
     {
       name: "keywords",
-      content: `personal, website, about, profile ${configs.navBar.name}`,
+      content: `personal, website, about, profile, ${configs.navBar.name}`,
     },
     { name: "author", content: configs.navBar.name },
     { name: "robots", content: "index, follow" },

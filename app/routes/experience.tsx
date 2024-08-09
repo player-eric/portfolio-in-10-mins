@@ -11,7 +11,7 @@ export const meta: MetaFunction = () => {
     },
     {
       name: "keywords",
-      content: `personal, website, about, profile ${configs.navBar.name}`,
+      content: `personal, website, about, profile, ${configs.navBar.name}, education, work experience`,
     },
     { name: "author", content: configs.navBar.name },
     { name: "robots", content: "index, follow" },
@@ -20,6 +20,8 @@ export const meta: MetaFunction = () => {
 };
 
 export default function Experience() {
+  if (!configs.experiencePage) return null;
+
   return (
     <div className="mx-4 mt-10 md:mx-0 md:mt-12">
       {configs.experiencePage.map((section) => (

@@ -51,6 +51,89 @@ const configs: Configs = {
       ],
     },
   ],
+  skillsPage: [
+    {
+      name: "React",
+      iconFileName: "react.svg",
+    },
+    {
+      name: "React",
+      iconFileName: "react.svg",
+    },
+    {
+      name: "React",
+      iconFileName: "react.svg",
+    },
+    {
+      name: "React",
+      iconFileName: "react.svg",
+    },
+    {
+      name: "React",
+      iconFileName: "react.svg",
+    },
+    {
+      name: "React",
+      iconFileName: "react.svg",
+    },
+    {
+      name: "React",
+      iconFileName: "react.svg",
+    },
+    {
+      name: "React",
+      iconFileName: "react.svg",
+    },
+    {
+      name: "React",
+      iconFileName: "react.svg",
+    },
+    {
+      name: "React",
+      iconFileName: "react.svg",
+    },
+    {
+      name: "React",
+      iconFileName: "react.svg",
+    },
+    {
+      name: "React",
+      iconFileName: "react.svg",
+    },
+    {
+      name: "React",
+      iconFileName: "react.svg",
+    },
+    {
+      name: "React",
+      iconFileName: "react.svg",
+    },
+    {
+      name: "React",
+      iconFileName: "react.svg",
+    },
+    {
+      name: "TypeScript",
+    },
+    {
+      name: "Node.js",
+    },
+    {
+      name: "GraphQL",
+    },
+    {
+      name: "TailwindCSS",
+    },
+    {
+      name: "PostgreSQL",
+    },
+    {
+      name: "Docker",
+    },
+    {
+      name: "Kubernetes",
+    },
+  ],
 };
 
 export default configs;

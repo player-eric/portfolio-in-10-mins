@@ -28,7 +28,7 @@ export interface Configs {
     greeting: string;
     content: string;
   };
-  experiencePage: {
+  experiencePage?: {
     sectionName: string;
     items: {
       title: string;
@@ -36,5 +36,9 @@ export interface Configs {
       location?: string;
       content: string;
     }[];
+  }[];
+  skillsPage?: {
+    iconFileName?: string;
+    name: string;
   }[];
 }
