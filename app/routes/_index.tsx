@@ -4,11 +4,11 @@ import configs from "~/configs/configs";
 
 export const meta: MetaFunction = () => {
   return [
-    { title: `${configs.navBar.name}` },
+    { title: `${configs.navBar.name} | About` },
     { name: "description", content: `about ${configs.navBar.name}` },
     {
       name: "keywords",
-      content: `personal, website, about, profile ${configs.navBar.name}`,
+      content: `personal, website, about, profile, ${configs.navBar.name}`,
     },
     { name: "author", content: configs.navBar.name },
     { name: "robots", content: "index, follow" },
@@ -20,7 +20,7 @@ export default function About() {
   return (
     <div className="w-full h-full md:h-[93vh] flex">
       <div
-        className={`bg-[${configs.colors.primary}] w-full rounded-xl h-full md:h-3/4 my-auto mx-auto flex justify-center align-middle`}
+        className={`bg-[${configs.colors.primary}] w-full rounded-xl h-full lg:h-5/6 my-auto mx-auto flex justify-center align-middle`}
       >
         <div className="w-full h-full md:grid md:grid-cols-5">
           <div className="col-span-2 md:h-full md:w-full h-full flex">
@@ -32,7 +32,7 @@ export default function About() {
           </div>
           <div className="col-span-3 flex flex-col items-center w-full h-full">
             <div className="w-7/8 h-7/8 mx-auto my-auto flex flex-col items-center">
-              <h1 className="text-5xl font-blackOpsOne my-6 md:mt-0 md:mb-12">
+              <h1 className="text-5xl font-blackOpsOne my-6 md:my-1 lg:mb-12">
                 {configs.aboutPage.greeting}
               </h1>
               <p className="font-courierPrime text-lg mx-6">
