@@ -14,7 +14,7 @@ export const links: LinksFunction = () => [
   },
 ];
 
-export default function FootPrintsPage() {
+export default function FootPrints() {
   return (
     <>
       <ClientOnly>

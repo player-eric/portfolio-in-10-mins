@@ -1,7 +1,7 @@
 import { Configs } from "~/types/configTypes";
 
 const configs: Configs = {
-  routes: ["about", "skills", "projects", "footprints"],
+  routes: ["about", "experience", "skills", "projects", "footprints"],
   name: "Shiqin Yan",
   contacts: {
     email: "digimonyan@gmail.com",

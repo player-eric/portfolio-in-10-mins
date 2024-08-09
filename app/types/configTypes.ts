@@ -7,7 +7,12 @@ type ContactOptions =
   | "instagram"
   | "linkedin";
 
-type RouteOptions = "about" | "skills" | "projects" | "footprints";
+type RouteOptions =
+  | "about"
+  | "skills"
+  | "experience"
+  | "projects"
+  | "footprints";
 
 export interface Configs {
   routes: RouteOptions[];
