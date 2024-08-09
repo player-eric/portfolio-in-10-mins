@@ -1,4 +1,4 @@
-import { Link, NavLink } from "@remix-run/react";
+import { Link, NavLink, useLocation } from "@remix-run/react";
 import { useEffect, useRef, useState } from "react";
 
 import configs from "~/configs/configs";
@@ -31,6 +31,8 @@ export function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
 
+  const location = useLocation();
+
   const toggleMenu = () => {
     setIsMenuOpen((isMenuOpen) => !isMenuOpen);
   };
@@ -56,17 +58,17 @@ export function Navbar() {
       </Link>
       <div className="hidden lg:flex space-x-6">
         {configs.routes.map((route, index) => (
-          <NavLink
+          <Link
             to={`/${route}`}
             key={index}
-            className={({ isActive }) =>
-              isActive
+            className={
+              location.pathname.includes(route)
                 ? "text-gray-500 underline underline-offset-4"
                 : "text-black"
             }
           >
             {route.charAt(0).toUpperCase() + route.slice(1)}
-          </NavLink>
+          </Link>
         ))}
       </div>
       <div className="flex space-x-4">
@@ -91,17 +93,17 @@ export function Navbar() {
         {isMenuOpen && (
           <div className="px-2 flex flex-col absolute right-0 mt-4 w-auto bg-[#FFD562] shadow-lg rounded-lg">
             {configs.routes.map((route, index) => (
-              <NavLink
+              <Link
                 to={`/${route}`}
                 key={index}
-                className={({ isActive }) =>
-                  isActive
+                className={
+                  location.pathname.includes(route)
                     ? "text-gray-500 underline underline-offset-4"
                     : "text-black"
                 }
               >
                 {route.charAt(0).toUpperCase() + route.slice(1)}
-              </NavLink>
+              </Link>
             ))}
           </div>
         )}
