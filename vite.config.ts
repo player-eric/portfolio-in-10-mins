@@ -5,6 +5,8 @@ import tsconfigPaths from "vite-tsconfig-paths";
 import { copyFileSync } from "node:fs";
 import { join } from "node:path";
 
+import configs from "./app/configs/configs";
+
 export default defineConfig({
   base: "/portfolio-in-10-mins/",
   plugins: [
@@ -13,7 +15,6 @@ export default defineConfig({
       ssr: false,
       buildEnd(args) {
         if (!args.viteConfig.isProduction) return;
-
         // When deploying to GitHub Pages, if you navigate from / to another
         // route and refresh the tab, it will show the default GH Pages 404
         // page. This happens because GH Pages is not configured to send all
@@ -27,6 +28,14 @@ export default defineConfig({
           join(buildPath, "index.html"),
           join(buildPath, "404.html")
         );
+      },
+      routes(defineRoutes) {
+        return defineRoutes((route) => {
+          route("/", "routes/_index.tsx", { index: true });
+          configs.routes.forEach((routeName) => {
+            route(routeName, `routes/${routeName}.tsx`);
+          });
+        });
       },
       future: {
         v3_fetcherPersist: true,

@@ -11,7 +11,7 @@ import { LinksFunction } from "@remix-run/node";
 
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: stylesheet },
-  { rel: "icon", href: "configs/icon.png" },
+  { rel: "icon", href: "icon.png" },
 ];
 
 export function Layout({ children }: { children: React.ReactNode }) {
@@ -37,7 +37,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
 export default function App() {
   return (
-    <div className="w-5/6 mx-auto">
+    <div className="w-full md:w-5/6 mx-auto">
       <Outlet />
     </div>
   );
