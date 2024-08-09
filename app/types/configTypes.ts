@@ -28,4 +28,13 @@ export interface Configs {
     greeting: string;
     content: string;
   };
+  experiencePage: {
+    sectionName: string;
+    items: {
+      title: string;
+      date?: string;
+      location?: string;
+      content: string;
+    }[];
+  }[];
 }

@@ -5,7 +5,7 @@ import configs from "~/configs/configs";
 export const meta: MetaFunction = () => {
   return [
     { title: `${configs.navBar.name} | About` },
-    { name: "description", content: `${configs.navBar.name} personal website` },
+    { name: "description", content: `about ${configs.navBar.name}` },
     {
       name: "keywords",
       content: `personal, website, about, profile ${configs.navBar.name}`,
