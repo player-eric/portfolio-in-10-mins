@@ -8,10 +8,10 @@ import { join } from "node:path";
 import configs from "./app/configs/configs";
 
 export default defineConfig({
-  base: "/portfolio-in-10-mins/",
+  base: "/portfolio-remix-spa/",
   plugins: [
     remix({
-      basename: "/portfolio-in-10-mins/",
+      basename: "/portfolio-remix-spa/",
       ssr: false,
       routes(defineRoutes) {
         return defineRoutes((route) => {
