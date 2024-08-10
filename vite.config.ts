@@ -13,14 +13,14 @@ export default defineConfig({
     remix({
       basename: "/portfolio-remix-spa/",
       ssr: false,
-      routes(defineRoutes) {
-        return defineRoutes((route) => {
-          route("/", "routes/_index.tsx", { index: true });
-          configs.routes.forEach((routeName) => {
-            route(routeName, `routes/${routeName}.tsx`);
-          });
-        });
-      },
+      // routes(defineRoutes) {
+      //   return defineRoutes((route) => {
+      //     route("/", "routes/_index.tsx", { index: true });
+      //     configs.routes.forEach((routeName) => {
+      //       route(routeName, `routes/${routeName}.tsx`);
+      //     });
+      //   });
+      // },
       buildEnd(args) {
         if (!args.viteConfig.isProduction) return;
         // When deploying to GitHub Pages, if you navigate from / to another

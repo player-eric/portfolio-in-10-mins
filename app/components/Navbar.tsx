@@ -1,4 +1,4 @@
-import { Link, NavLink, useLocation } from "@remix-run/react";
+import { Link, useLocation } from "@remix-run/react";
 import { useEffect, useRef, useState } from "react";
 
 import configs from "~/configs/configs";
@@ -63,15 +63,15 @@ export function Navbar() {
       <div className="hidden lg:flex space-x-6">
         {configs.routes.map((route, index) => (
           <Link
-            to={`/${route}`}
+            to={`/${route.url}`}
             key={index}
             className={
-              location.pathname.includes(route)
+              location.pathname.includes(route.url)
                 ? "text-gray-500 underline underline-offset-4"
                 : "text-black"
             }
           >
-            {route.charAt(0).toUpperCase() + route.slice(1)}
+            {route.label}
           </Link>
         ))}
       </div>
@@ -101,12 +101,12 @@ export function Navbar() {
                 to={`/${route}`}
                 key={index}
                 className={
-                  location.pathname.includes(route)
+                  location.pathname.includes(route.url)
                     ? "text-gray-500 underline underline-offset-4"
                     : "text-black"
                 }
               >
-                {route.charAt(0).toUpperCase() + route.slice(1)}
+                {route.label}
               </Link>
             ))}
           </div>

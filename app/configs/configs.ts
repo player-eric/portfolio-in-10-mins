@@ -1,7 +1,12 @@
 import { Configs } from "~/types/configTypes";
 
 const configs: Configs = {
-  routes: ["about", "skills", "projects", "footprints"],
+  routes: [
+    { label: "About", url: "about" },
+    { label: "Projects", url: "projects" },
+    { label: "Me & Ramen", url: "ramen" },
+    { label: "Footprints", url: "footprints" },
+  ],
   colors: {
     primary: "#FFD562",
     background: "#FFE591",

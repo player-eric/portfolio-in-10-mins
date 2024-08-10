@@ -7,15 +7,8 @@ type ContactOptions =
   | "instagram"
   | "linkedin";
 
-type RouteOptions =
-  | "about"
-  | "skills"
-  | "experience"
-  | "projects"
-  | "footprints";
-
 export interface Configs {
-  routes: RouteOptions[];
+  routes: { label: string; url: string }[];
   colors: {
     primary: string;
     background: string;
