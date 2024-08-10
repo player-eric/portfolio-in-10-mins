@@ -58,6 +58,10 @@ export default function About() {
                   I'm passionate about solving real-world problems with my
                   Computer Science skills.🤔️
                 </p>
+                <p className="font-courierPrime text-xl mx-6">
+                  Outside of work, I enjoy photography📷, cycling🚴️, and
+                  playing guitar🎸.
+                </p>
               </div>
             </div>
           </div>
