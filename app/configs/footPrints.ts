@@ -3,13 +3,398 @@ import { FootPrintData } from "~/components/FootPrintMap.client";
 export const footPrintsWithPicture: FootPrintData[] = [
   {
     position: [36.0614, 103.8342],
-    image: "pictures/footprints/LanZhou.jpg",
+    image: "LanZhou.jpg",
     title: "兰州 Lan Zhou",
   },
   {
     position: [32.0584, 118.7965],
-    image: "pictures/footprints/NanJing.jpg",
+    image: "NanJing.jpg",
     title: "南京 Nan Jing",
+  },
+  {
+    position: [31.2304, 121.4737],
+    image: "ShangHai.jpg",
+    title: "上海 Shang Hai",
+  },
+  {
+    position: [35.6764, 139.65],
+    image: "Tokyo.jpg",
+    title: "Tokyo",
+  },
+  {
+    title: "New York",
+    position: [40.7128, -74.006],
+    image: "NewYork.jpg",
+  },
+  {
+    title: "Orlando",
+    position: [28.5383, -81.3792],
+    image: "Orlando.jpg",
+  },
+  {
+    title: "San Francisco",
+    position: [37.7749, -122.4194],
+    image: "SanFrancisco.jpg",
+  },
+  {
+    title: "Seattle",
+    position: [47.6062, -122.3321],
+    image: "Seattle.jpg",
+  },
+  {
+    title: "Washington, D.C.",
+    position: [38.9072, -77.0369],
+    image: "WashingtonDC.jpg",
+  },
+  {
+    title: "Boston",
+    position: [42.3601, -71.0589],
+    image: "Boston.jpg",
+  },
+  {
+    title: "Chicago",
+    position: [41.8781, -87.6298],
+    image: "Chicago.jpg",
+  },
+  {
+    title: "Los Angeles",
+    position: [34.0522, -118.2437],
+    image: "LosAngeles.jpg",
+  },
+  {
+    title: "Denver",
+    position: [39.7392, -104.9903],
+    image: "Denver.jpg",
+  },
+  {
+    title: "San Diego",
+    position: [32.7157, -117.1611],
+    image: "SanDiego.jpg",
+  },
+  {
+    title: "Houston",
+    position: [29.7604, -95.3698],
+    image: "Houston.jpg",
+  },
+  {
+    title: "Salt Lake City",
+    position: [40.7608, -111.891],
+    image: "SaltLakeCity.jpg",
+  },
+  {
+    title: "Las Vegas",
+    position: [36.1699, -115.1398],
+    image: "LasVegas.jpg",
+  },
+  {
+    title: "Albuquerque",
+    position: [35.0844, -106.6504],
+    image: "Albuquerque.jpg",
+  },
+  {
+    title: "Kansas City",
+    position: [39.0997, -94.5786],
+    image: "KansasCity.jpg",
+  },
+  {
+    title: "Honolulu",
+    position: [21.3069, -157.8583],
+    image: "Honolulu.jpg",
+  },
+  {
+    title: "Anchorage",
+    position: [61.2181, -149.9003],
+    image: "Anchorage.jpg",
+  },
+  {
+    title: "Fairbanks",
+    position: [64.8378, -147.7164],
+    image: "Fairbanks.jpg",
+  },
+  {
+    title: "Hilo",
+    position: [19.7071, -155.0884],
+    image: "Hilo.jpg",
+  },
+  {
+    title: "San Juan",
+    position: [18.4655, -66.1057],
+    image: "SanJuan.jpg",
+  },
+  {
+    title: "Mexico City",
+    position: [19.4326, -99.1332],
+    image: "MexicoCity.jpg",
+  },
+  {
+    title: "Arqueológica de Teotihuacán",
+    position: [19.6926, -98.8437],
+    image: "Teotihuacan.jpg",
+  },
+  {
+    title: "Vieques",
+    position: [18.126, -65.4401],
+    image: "Vieques.jpg",
+  },
+  {
+    title: "Culebra",
+    position: [18.3127, -65.3],
+    image: "Culebra.jpg",
+  },
+  {
+    title: "Monterrey",
+    position: [25.6866, -100.3161],
+    image: "Monterrey.jpg",
+  },
+  {
+    title: "Guanajuato",
+    position: [21.019, -101.2574],
+    image: "Guanajuato.jpg",
+  },
+  {
+    title: "Tijuana",
+    position: [32.5149, -117.0382],
+    image: "Tijuana.jpg",
+  },
+  {
+    title: "White sands",
+    position: [32.779, -106.3252],
+    image: "WhiteSands.jpg",
+  },
+  {
+    title: "Grand Canyon",
+    position: [36.1069, -112.1129],
+    image: "GrandCanyon.jpg",
+  },
+  {
+    title: "Joshua Tree",
+    position: [33.8734, -115.901],
+    image: "JoshuaTree.jpg",
+  },
+  {
+    title: "Yosemite",
+    position: [37.8651, -119.5383],
+    image: "Yosemite.jpg",
+  },
+  {
+    title: "Arches",
+    position: [38.7331, -109.5925],
+    image: "Arches.jpg",
+  },
+  {
+    title: "Seward",
+    position: [60.1042, -149.4422],
+    image: "Seward.jpg",
+  },
+  {
+    title: "Denali",
+    position: [63.1148, -151.1926],
+    image: "Denali.jpg",
+  },
+  {
+    title: "Matanuska Glacier",
+    position: [61.7461, -147.6479],
+    image: "MatanuskaGlacier.jpg",
+  },
+  {
+    title: "Whittier",
+    position: [60.7736, -148.6836],
+    image: "Whittier.jpg",
+  },
+  {
+    title: "Maui",
+    position: [20.7984, -156.3319],
+    image: "Maui.jpg",
+  },
+  {
+    title: "Providence",
+    position: [41.824, -71.4128],
+    image: "Providence.jpg",
+  },
+  {
+    title: "Zion",
+    position: [37.2982, -113.0263],
+    image: "Zion.jpg",
+  },
+  {
+    title: "成都 Cheng Du",
+    position: [30.5728, 104.0668],
+    image: "Chengdu.jpg",
+  },
+  {
+    title: "三亚 San Ya",
+    position: [18.2528, 109.5119],
+    image: "Sanya.png",
+  },
+  {
+    title: "海口 Hai Kou",
+    position: [20.0442, 110.1983],
+    image: "Haikou.jpg",
+  },
+  {
+    title: "沈阳 Shen Yang",
+    position: [41.8057, 123.4315],
+    image: "Shenyang.jpg",
+  },
+  {
+    title: "哈尔滨 Harbin",
+    position: [45.8038, 126.535],
+    image: "Harbin.jpg",
+  },
+  {
+    title: "大连 Da Lian",
+    position: [38.914, 121.6147],
+    image: "Dalian.jpg",
+  },
+  {
+    title: "Hong Kong",
+    position: [22.3193, 114.1694],
+    image: "HongKong.jpg",
+  },
+  {
+    title: "Singapore",
+    position: [1.3521, 103.8198],
+    image: "Singapore.jpg",
+  },
+  {
+    title: "丹东 Dan Dong",
+    position: [40.129, 124.3949],
+    image: "Dandong.jpg",
+  },
+  {
+    title: "Philadelphia",
+    position: [39.9526, -75.1652],
+    image: "Philadelphia.jpg",
+  },
+  {
+    title: "Hawaii Volcanoes National Park",
+    position: [19.4067, -155.2833],
+    image: "HawaiiVolcanoes.jpg",
+  },
+  {
+    title: "郑州 Zheng Zhou",
+    position: [34.7466, 113.6253],
+    image: "ZhengZhou.jpg",
+  },
+  {
+    title: "Panmunjom",
+    position: [37.9483, 126.6825],
+    image: "Panmunjom.jpg",
+  },
+  {
+    title: "Yanggakdo",
+    position: [39.0386, 125.7625],
+    image: "Yanggakdo.jpg",
+  },
+  {
+    title: "Pyongyang",
+    position: [39.0304, 125.754178],
+    image: "Pyongyang.jpg",
+  },
+  {
+    title: "London",
+    position: [51.5074, -0.1278],
+    image: "London.jpg",
+  },
+  {
+    title: "Edinburgh",
+    position: [55.9533, -3.1883],
+    image: "Edinburgh.jpg",
+  },
+  {
+    title: "Liverpool",
+    position: [53.4084, -2.9916],
+    image: "Liverpool.jpg",
+  },
+  {
+    title: "Phnom Penh",
+    position: [11.5564, 104.9282],
+    image: "PhnomPenh.jpg",
+  },
+  {
+    title: "Plainsboro",
+    position: [40.3337, -74.5962],
+    image: "Plainsboro.jpg",
+  },
+  {
+    title: "厦门 Xia Men",
+    position: [24.4798, 118.0894],
+    image: "Xiamen.jpg",
+  },
+  {
+    title: "广汉 Guang Han",
+    position: [30.9776, 104.2824],
+    image: "GuangHan.jpg",
+  },
+  {
+    title: "Destin",
+    position: [30.3935, -86.4958],
+    image: "Destin.jpg",
+  },
+  {
+    title: "New Orleans",
+    position: [29.9511, -90.0715],
+    image: "NewOrleans.jpg",
+  },
+  {
+    title: "Montauk",
+    position: [41.0359, -71.9545],
+    image: "Montauk.jpg",
+  },
+  {
+    title: "Atlanta",
+    position: [33.749, -84.388],
+    image: "Atlanta.jpg",
+  },
+  {
+    title: "文昌 Wen Chang",
+    position: [19.5433, 110.7977],
+    image: "WenChang.jpg",
+  },
+  {
+    title: "Santa Fe",
+    position: [35.6869, -105.9378],
+    image: "SantaFe.jpg",
+  },
+  {
+    title: "Antelope Canyon",
+    position: [36.8619, -111.3743],
+    image: "AntelopeCanyon.jpg",
+  },
+  {
+    title: "长白山 Chang Bai Shan",
+    position: [41.9459, 128.0847],
+    image: "ChangBaiShan.jpg",
+  },
+  {
+    title: "延吉 Yan Ji",
+    position: [42.8911, 129.5089],
+    image: "YanJi.jpg",
+  },
+  {
+    title: "秦皇岛 Qin Huang Dao",
+    position: [39.9354, 119.5992],
+    image: "QinHuangDao.jpg",
+  },
+  {
+    title: "苏州 Suzhou",
+    position: [31.2989, 120.5853],
+    image: "Suzhou.jpg",
+  },
+  {
+    title: "武汉 Wu Han",
+    position: [30.5928, 114.3055],
+    image: "WuHan.jpg",
+  },
+  {
+    title: "阿尔山 Arxan",
+    position: [47.1774, 119.9436],
+    image: "Arxan.jpg",
+  },
+  {
+    title: "Salem",
+    position: [42.5195, -70.8967],
+    image: "Salem.jpg",
   },
 ];
 

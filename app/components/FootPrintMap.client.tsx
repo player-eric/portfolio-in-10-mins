@@ -100,7 +100,10 @@ const FootPrintMap: React.FC<FootPrintMapProps> = ({
       </MapContainer>
       {selectedMarker && (
         <div className="full-screen-image-wrapper" onClick={closeImage}>
-          <img src={selectedMarker.image} alt={selectedMarker.image} />
+          <img
+            src={`pictures/footprints/${selectedMarker.image}`}
+            alt={selectedMarker.image}
+          />
         </div>
       )}
     </>

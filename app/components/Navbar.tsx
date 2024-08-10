@@ -33,8 +33,6 @@ export function Navbar() {
 
   const location = useLocation();
 
-  console.log(location.pathname);
-
   const toggleMenu = () => {
     setIsMenuOpen((isMenuOpen) => !isMenuOpen);
   };
@@ -68,8 +66,7 @@ export function Navbar() {
             to={`/${route}`}
             key={index}
             className={
-              location.pathname.includes(route) ||
-              (location.pathname === "/" && route === "about")
+              location.pathname.includes(route)
                 ? "text-gray-500 underline underline-offset-4"
                 : "text-black"
             }
@@ -104,8 +101,7 @@ export function Navbar() {
                 to={`/${route}`}
                 key={index}
                 className={
-                  location.pathname.includes(route) ||
-                  (location.pathname === "/" && route === "about")
+                  location.pathname.includes(route)
                     ? "text-gray-500 underline underline-offset-4"
                     : "text-black"
                 }
