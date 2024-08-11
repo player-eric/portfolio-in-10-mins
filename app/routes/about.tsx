@@ -94,7 +94,6 @@ export default function About() {
           </a>
           .
         </p>
-        .
       </ExperienceCard>
       <ExperienceCard
         title="Brown Visual Computing Lab"
@@ -115,8 +114,9 @@ export default function About() {
             target="_blank"
             className="underline underline-offset-4"
           >
-            TrakCare.
+            TrakCare
           </a>
+          .
         </p>
       </ExperienceCard>
       <h1 className="font-blackOpsOne text-4xl mt-6 mb-2">Education</h1>

@@ -9,6 +9,7 @@ import { Navbar } from "./components/Navbar";
 import stylesheet from "~/tailwind.css?url";
 import { LinksFunction } from "@remix-run/node";
 import configs from "./configs/configs";
+import BackToTopButton from "./components/layout/BackToTop";
 
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: stylesheet },
@@ -31,7 +32,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Navbar />
 
         {children}
-
+        <BackToTopButton></BackToTopButton>
         <ScrollRestoration />
         <Scripts />
       </body>

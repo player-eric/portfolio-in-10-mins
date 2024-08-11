@@ -38,7 +38,7 @@ export default function Ramen() {
             <span className="font-bold">DOB:</span> 2023/10/15 🎂
           </p>
           <p>
-            <span className="font-bold">Gender:</span> Unknown 🫣
+            <span className="font-bold">Gender:</span> Other 🫣
           </p>
           <p>
             <span className="font-bold">Breed:</span> Maine Coon 🐯
@@ -64,7 +64,7 @@ export default function Ramen() {
         ></img>
       </div>
       <div className="text-2xl font-courierPrime my-4">
-        Ramen is a great example of how cats can be doggy:
+        Ramen is a great example of how cats can act doggy:
       </div>
       <div className="flex flex-col w-full items-center justify-between">
         <img
