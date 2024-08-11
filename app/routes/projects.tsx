@@ -1,4 +1,5 @@
 import type { MetaFunction } from "@remix-run/node";
+import BackToTopButton from "~/components/layout/BackToTop";
 import { ProjectCard } from "~/components/projects/ProjectCard";
 import configs from "~/configs/configs";
 
@@ -151,6 +152,8 @@ export default function Projects() {
           .
         </p>
       </ProjectCard>
+
+      <BackToTopButton></BackToTopButton>
     </div>
   );
 }

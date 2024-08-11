@@ -1,4 +1,5 @@
 import { MetaFunction } from "@remix-run/react";
+import BackToTopButton from "~/components/layout/BackToTop";
 import configs from "~/configs/configs";
 
 export const meta: MetaFunction = () => {
@@ -78,6 +79,8 @@ export default function Ramen() {
           alt="ramen-dogging"
         ></img>
       </div>
+
+      <BackToTopButton></BackToTopButton>
     </div>
   );
 }

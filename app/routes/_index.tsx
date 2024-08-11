@@ -1,6 +1,7 @@
 import type { MetaFunction } from "@remix-run/node";
 import ExperienceCard from "~/components/experience/ExperienceCard";
 import ExperienceCardWithPicture from "~/components/experience/ExperienceCardWithPicture";
+import BackToTopButton from "~/components/layout/BackToTop";
 import ProjectWithPicture from "~/components/projects/ProjectWithPicture";
 
 import configs from "~/configs/configs";
@@ -170,6 +171,8 @@ export default function About() {
         pdfLink="https://www.statmt.org/wmt20/pdf/2020.wmt-1.117.pdf"
         abstract="This paper describes the submissions of the NiuTrans Team to the WMT 2020 Quality Estimation Shared Task. We participated in all tasks and all language pairs. We explored the combination of transfer learning, multi-task learning and model ensemble. Results on multiple tasks show that deep transformer machine translation models and multilingual pretraining methods significantly improve translation quality estimation performance. Our system achieved remarkable results in multiple level tasks, e.g., our submissions obtained the best results on all tracks in the sentence-level Direct Assessment task."
       ></PublicationWithPicture>
+
+      <BackToTopButton></BackToTopButton>
     </div>
   );
 }
