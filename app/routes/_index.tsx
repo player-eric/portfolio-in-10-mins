@@ -83,6 +83,14 @@ export default function About() {
             className="underline underline-offset-4"
           >
             openfigi.com
+          </a>{" "}
+          and{" "}
+          <a
+            href="https://www.openfigi.com/api"
+            target="_blank"
+            className="underline underline-offset-4"
+          >
+            OpenFIGI API
           </a>
           .
         </p>
