@@ -43,6 +43,20 @@ export function Navbar() {
     }
   };
 
+  const handleScroll = () => {
+    setIsMenuOpen(false);
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   useEffect(() => {
     document.addEventListener("mousedown", handleClickOutside);
     return () => {
@@ -98,13 +112,14 @@ export function Navbar() {
           <div className="px-2 flex flex-col absolute right-0 mt-4 w-auto bg-[#FFD562] shadow-lg rounded-lg">
             {configs.routes.map((route, index) => (
               <Link
-                to={`/${route}`}
+                to={`/${route.url}`}
                 key={index}
                 className={
                   location.pathname.includes(route.url)
                     ? "text-gray-500 underline underline-offset-4"
                     : "text-black"
                 }
+                onClick={() => setIsMenuOpen(false)}
               >
                 {route.label}
               </Link>

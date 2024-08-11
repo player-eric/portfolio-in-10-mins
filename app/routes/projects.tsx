@@ -1,7 +1,5 @@
 import type { MetaFunction } from "@remix-run/node";
 import { ProjectCard } from "~/components/projects/ProjectCard";
-import ProjectWithoutPicture from "~/components/projects/ProjectWithoutPicture";
-import ProjectWithPicture from "~/components/projects/ProjectWithPicture";
 import configs from "~/configs/configs";
 
 export const meta: MetaFunction = () => {

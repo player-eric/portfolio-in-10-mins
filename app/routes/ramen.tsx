@@ -1,3 +1,23 @@
+import { MetaFunction } from "@remix-run/react";
+import configs from "~/configs/configs";
+
+export const meta: MetaFunction = () => {
+  return [
+    { title: `Ramen the maine coon` },
+    {
+      name: "description",
+      content: `Ramen the Maine coon, ${configs.navBar.name}'s pet`,
+    },
+    {
+      name: "keywords",
+      content: `${configs.navBar.name}, pet, ramen`,
+    },
+    { name: "author", content: configs.navBar.name },
+    { name: "robots", content: "index, follow" },
+    { name: "viewport", content: "width=device-width, initial-scale=1" },
+  ];
+};
+
 export default function Ramen() {
   return (
     <div className="mx-4 mt-8 md:mx-0 md:mt-12">
