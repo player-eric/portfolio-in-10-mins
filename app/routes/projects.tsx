@@ -41,8 +41,9 @@ export default function Projects() {
           2,000 Anime posters were collected and constructed into a network
           based on similarities. And then a few community detection algorithms
           were run on this network to determine the most representative posters
-          of different genres. These posters are further used as style reference
-          images in neural style transfer algorithm when stylizing input images.
+          of different genres. These posters could be further used as style
+          reference images in neural style transfer algorithm when stylizing
+          input images.
         </div>
       </ProjectCard>
       <ProjectCard title="NMT-Visualizer" pictureFileName="nmtvis.png">
