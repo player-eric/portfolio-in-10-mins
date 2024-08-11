@@ -1,3 +1,4 @@
+import { useState } from "react";
 import configs from "~/configs/configs";
 
 type PublicationWithoutPictureProps = {
@@ -12,6 +13,7 @@ type PublicationWithoutPictureProps = {
 export default function PublicationWithPicture(
   props: PublicationWithoutPictureProps
 ) {
+  const [openAbstract, setOpenAbstract] = useState(false);
   return (
     <div className="w-full flex flex-col md:flex-row mb-4">
       <div
@@ -54,9 +56,15 @@ export default function PublicationWithPicture(
                 </h1>
               )}
               <div className="flex flex-row">
+                <span
+                  onClick={() => setOpenAbstract(!openAbstract)}
+                  className="text-xl underline underline-offset-4 font-courierPrime cursor-pointer"
+                >
+                  Abstract
+                </span>
                 {props.webLink && (
                   <a
-                    className="text-xl underline underline-offset-4 font-courierPrime"
+                    className="ml-2 text-xl underline underline-offset-4 font-courierPrime"
                     href={props.webLink}
                     target="_blank"
                   >
@@ -73,6 +81,9 @@ export default function PublicationWithPicture(
                   </a>
                 )}
               </div>
+              {openAbstract && (
+                <div className="mt-2 mr-4">{props.abstract}</div>
+              )}
             </div>
           </div>
         </div>

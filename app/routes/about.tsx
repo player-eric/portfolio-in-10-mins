@@ -153,12 +153,14 @@ export default function About() {
         pictureFileName="neuralFields.png"
         webLink="https://neuralfields.cs.brown.edu/eg22.html"
         pdfLink="https://arxiv.org/pdf/2111.11426"
+        abstract="Recent advances in machine learning have created increasing interest in solving visual computing problems using a class of coordinate-based neural networks that parametrize physical properties of scenes or objects across space and time. These methods, which we call neural fields, have seen successful application in the synthesis of 3D shapes and image, animation of human bodies, 3D reconstruction, and pose estimation. However, due to rapid progress in a short time, many papers exist but a comprehensive review and formulation of the problem has not yet emerged. In this report, we address this limitation by providing context, mathematical grounding, and an extensive review of literature on neural fields. This report covers research along two dimensions. In Part I, we focus on techniques in neural fields by identifying common components of neural field methods, including different representations, architectures, forward mapping, and generalization methods. In Part II, we focus on applications of neural fields to different problems in visual computing, and beyond (e.g., robotics, audio). Our review shows the breadth of topics already covered in visual computing, both historically and in current incarnations, demonstrating the improved quality, flexibility, and capability brought by neural fields methods. Finally, we present a companion website that contributes a living version of this review that can be continually updated by the community."
       ></PublicationWithPicture>
       <PublicationWithPicture
         title="The NiuTrans System for the WMT20 Quality Estimation Shared Task"
         pictureFileName="mtqe.png"
         webLink="https://aclanthology.org/2020.wmt-1.117/"
         pdfLink="https://www.statmt.org/wmt20/pdf/2020.wmt-1.117.pdf"
+        abstract="This paper describes the submissions of the NiuTrans Team to the WMT 2020 Quality Estimation Shared Task. We participated in all tasks and all language pairs. We explored the combination of transfer learning, multi-task learning and model ensemble. Results on multiple tasks show that deep transformer machine translation models and multilingual pretraining methods significantly improve translation quality estimation performance. Our system achieved remarkable results in multiple level tasks, e.g., our submissions obtained the best results on all tracks in the sentence-level Direct Assessment task."
       ></PublicationWithPicture>
     </div>
   );
