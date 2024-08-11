@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8" />
+
+    <link href="styles/main.css" rel="stylesheet" type="text/css" />
+    <script src="three/build/three.min.js"></script>
+    <script src="three/build/OrbitControls.js"></script>
+    <script src="js/d3.min.js"></script>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/bootstrap-toggle.min.js"></script>
+    <script src="js/list.min.js"></script>
+    <link rel="stylesheet" href="js/bootstrap.min.css" />
+    <link rel="stylesheet" href="js/bootstrap-toggle.min.css" />
+    <link href="fontawesome/css/fontawesome.css" rel="stylesheet" />
+    <link href="fontawesome/css/solid.css" rel="stylesheet" />
+  </head>
+
+  <body style="background-color: #cce2f9;">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-2" id="left_area">
+          <h2>Settings</h2>
+          <div class="row">
+            <div class="col-lg-3">
+              <h4>Mode</h4>
+            </div>
+            <div class="col-lg-6">
+              <input
+                id="view_mode_toggle"
+                type="checkbox"
+                checked
+                data-toggle="toggle"
+                data-size="normal"
+                data-on="<i class='fas fa-sun'></i>   Light  "
+                data-off="<i class='fas fa-moon'></i>   Dark  "
+                data-onstyle="warning"
+                data-style="quick"
+              />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-3">
+              <h4>Grid</h4>
+            </div>
+            <div class="col-lg-6">
+              <input
+                id="grid_toggle"
+                type="checkbox"
+                checked
+                data-toggle="toggle"
+                data-size="normal"
+                data-on="<i class='fas fa-eye'></i> Show"
+                data-off="<i class='fas fa-eye-slash'></i> Hide"
+                data-onstyle="warning"
+                data-style="quick"
+              />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-3">
+              <h4>Axis</h4>
+            </div>
+            <div class="col-lg-6">
+              <input
+                id="axis_toggle"
+                type="checkbox"
+                checked
+                data-toggle="toggle"
+                data-size="normal"
+                data-on="<i class='fas fa-eye'></i> Show"
+                data-off="<i class='fas fa-eye-slash'></i> Hide"
+                data-onstyle="warning"
+                data-style="quick"
+              />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-12">
+              <hr / style="border-top: 2px solid black;">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-1">
+              <div id="words">
+                <input
+                  id="search_input"
+                  class="search"
+                  placeholder="Search for words"
+                />
+
+                <div id="search_list">
+                  <ul
+                    id="list_to_expand"
+                    class="list"
+                    style="list-style-type: none; margin: 0; padding: 0;"
+                  ></ul>
+                </div>
+              </div>
+              <span id="word_count">Total:0</span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-1"></div>
+            <div class="col-lg-10">
+              <button
+                id="clear_select_button"
+                type="button"
+                class="btn btn-primary btn-lg btn-block"
+                onclick="deselect_word()"
+                disabled
+              >
+                Clear Select
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-8">
+          <div id="scene-container"></div>
+        </div>
+        <div class="col-lg-2" id="right_area">
+          <h4 id="neighbors_num_1">&nbspNum of Neighbors:20</h4>
+          <div class="row">
+            <div class="col-sm-8">
+              <input
+                type="range"
+                class="custom-range"
+                min="0"
+                max="100"
+                value="20"
+                id="neighbor_slider"
+              />
+            </div>
+            <div class="col-sm-4">
+              <button
+                id="update_list"
+                type="button"
+                class="btn btn-primary btn-sm btn-block"
+              >
+                Update
+              </button>
+            </div>
+          </div>
+          <h4>&nbspDistance Type</h4>
+          <div class="row">
+            <div class="col-lg-2"></div>
+            <div class="col-lg-10">
+              <div class="btn-group" data-toggle="buttons">
+                <label class="btn btn-success active">
+                  <input type="radio" name="options" id="cosine_distance"
+                  checked"/> Cosine
+                </label>
+                <label class="btn btn-success">
+                  <input type="radio" name="options" id="euclidian_distance" />
+                  Euclidian
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-1"></div>
+            <div class="col-lg-10">
+              <hr / style="border-top: 2px solid black;">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-10">
+              <b id="neighbors_num_2">&nbsp20</b><b> closest words:</b>
+            </div>
+          </div>
+
+          <div id="neighbors">
+            <div id="neighbors_list">
+              <ul
+                id="list_to_expand"
+                class="list"
+                style="list-style-type: none; margin: 0; padding: 0;"
+              ></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="word" style="display: none;">Some text</div>
+    <div id="selected_word" style="display: none;">Some text</div>
+
+    <script>
+      var json_dir = "./embeddings3d.json";
+      var grid_color = 0xff0000;
+      var background_color = 0xfffaef;
+      var normal_color = 0x001890;
+      var highlight_color = 0xe32636;
+      var word_color = 0x000000;
+      var neighbors_num = 20;
+      var distance_type = "cosine";
+      var axis_exists = true;
+      var grid_exists = true;
+      var highlight_exists = false;
+      var selected_mesh = null;
+      var selected_list_item = null;
+      var painted_neighbor = [];
+      resize_left_area();
+      resize_graph();
+      resize_right_area();
+      window.addEventListener("resize", function (event) {
+        resize_graph();
+        resize_left_area();
+      });
+      $(function () {
+        $("#view_mode_toggle").change(function () {
+          if ($(this).prop("checked") == true) {
+            view_in_light_mode();
+          } else {
+            view_in_dark_mode();
+          }
+        });
+      });
+      $(function () {
+        $("#grid_toggle").change(function () {
+          show_or_hide_grid();
+        });
+      });
+      $(function () {
+        $("#axis_toggle").change(function () {
+          show_or_hide_axis();
+        });
+      });
+      var options = {
+        valueNames: ["name"],
+        item:
+          '<li><p class="name" style="cursor: pointer;" onclick="select_word(this)"></p></li>',
+      };
+      var values = [];
+      var wordlist = new List("words", options, values);
+      initialize_word_list(wordlist);
+      var options_ = {
+        valueNames: ["name"],
+        item: '<li><p class="name"  onclick="select_word(this)"></p></li>',
+      };
+      var values_ = [];
+      var wordlist_ = new List("neighbors", options_, values_);
+      var slider = document.getElementById("neighbor_slider");
+      slider.oninput = function () {
+        neighbors_num = this.value;
+        document.getElementById("neighbors_num_1").innerHTML =
+          "&nbspNum of Neighbors:" + neighbors_num;
+      };
+      document.getElementById("update_list").onclick = function () {
+        document.getElementById("neighbors_num_2").innerHTML = neighbors_num;
+        wordlist_.clear();
+        update_neighbor_list(neighbors_num, distance_type);
+      };
+      document.getElementById("cosine_distance").onchange = function () {
+        if (distance_type != "cosine") {
+          distance_type = "cosine";
+          update_neighbor_list(neighbors_num, distance_type);
+        }
+      };
+      document.getElementById("euclidian_distance").onchange = function () {
+        if (distance_type != "euclidian") {
+          distance_type = "euclidian";
+          update_neighbor_list(neighbors_num, distance_type);
+        }
+      };
+    </script>
+    <script src="js/scene.js"></script>
+  </body>
+</html>

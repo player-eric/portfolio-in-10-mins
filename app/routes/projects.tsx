@@ -73,7 +73,7 @@ export default function Projects() {
             mechanism (
             <a
               className="underline underline-offset-4"
-              href="https://player-eric.com/resources/nmtvis-demos/attention_demo"
+              href="/nmtvis-demos/attention_demo/index.html"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -82,7 +82,7 @@ export default function Projects() {
             ), word embedding (
             <a
               className="underline underline-offset-4"
-              href="https://player-eric.com/resources/nmtvis-demos/embedding_demo"
+              href="/nmtvis-demos/embedding_demo/index.html"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -91,7 +91,7 @@ export default function Projects() {
             ), and beam search decoding (
             <a
               className="underline underline-offset-4"
-              href="https://player-eric.com/resources/nmtvis-demos/beam_demo"
+              href="/nmtvis-demos/beam_demo/index.html"
               target="_blank"
               rel="noopener noreferrer"
             >

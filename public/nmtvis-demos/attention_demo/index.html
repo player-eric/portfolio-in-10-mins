@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Transformer Visualization</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="./jquery/jquery-3.4.1.min.js"></script>
+    <script src="./bootstrap3/bootstrap.min.js"></script>
+    <script src="./bootstrap3/bootstrap-colorselector.min.js"></script>
+    <link rel="stylesheet" href="./bootstrap3/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="./bootstrap3/bootstrap-colorselector.min.css"
+    />
+    <script src="./ploty/plotly-latest.min.js"></script>
+    <script src="./draw_transformer_linegraph.js"></script>
+    <script src="./draw_transformer_heatmap.js"></script>
+    <script src="./draw_transformer_highlight_graph.js"></script>
+    <script src="./utils.js"></script>
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <script src="./d3/d3.min.js"></script>
+  </head>
+  <script>
+    var json_dir = "./encoder_self_attention.json";
+    var total_sentence = 0;
+    var current_index = 1;
+    var word_color = "black";
+    var line_color = "red";
+    var view_mode = "alignment";
+    var layer = 0;
+    var current_head = Number.POSITIVE_INFINITY;
+    var attention_type_upper = "source";
+    var attention_type_lower = "source";
+    var head_total = 8;
+  </script>
+  <nav class="navbar navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="row" style="background-color:rgb(222, 220, 220);">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-1"></div>
+        <div class="col-lg-3">
+          <button
+            class="btn btn-primary  btn-lg"
+            type="button"
+            style="width:100%;"
+            onclick="dec_index()"
+          >
+            <span class="glyphicon glyphicon-arrow-left"></span>
+          </button>
+        </div>
+        <div class="col-lg-1">
+          <input
+            class="form-control input-lg"
+            id="sentence_num"
+            value="1"
+            type="text"
+          />
+        </div>
+        <div class="col-lg-3">
+          <button
+            class="btn btn-primary  btn-lg"
+            type="button"
+            style="width:100%;"
+            onclick="inc_index()"
+          >
+            <span class="glyphicon glyphicon-arrow-right"></span>
+          </button>
+        </div>
+        <div class="col-lg-1"></div>
+        <div class="col-lg-1">
+          <div class="dropdown">
+            <button
+              class="btn btn-primary dropdown-toggle btn-lg"
+              type="button"
+              data-toggle="dropdown"
+            >
+              <span class="glyphicon glyphicon-eye-open"></span> View
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+              <li>
+                <a onclick="view_as_alignment_graph()">Alignment Graph</a>
+              </li>
+              <li><a onclick="view_as_heatmap()">Heatmap</a></li>
+              <li>
+                <a onclick="view_as_highlight_graph()">Highlight Graph</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <svg id="line_graph"></svg>
+  <svg id="highlight_graph">
+    <text></text>
+  </svg>
+  <div align="center" id="heatmap"></div>
+
+  <div class="container-fluid">
+    <div class="col-lg-1">
+      <label>Layer</label>
+      <select onchange="layer=this.value;change_layer(layer);">
+        <option value="0">0 </option>
+        <option value="1">1 </option>
+        <option value="2">2 </option>
+        <option value="3">3 </option>
+        <option value="4">4 </option>
+        <option value="5">5 </option>
+      </select>
+    </div>
+    <div class="col-lg-2">
+      <label>Type</label>
+      <select onchange="change_attention_type(this.value);">
+        <option value="source_to_source">source_to_source</option>
+        <option value="target_to_target">target_to_target</option>
+        <option value="target_to_source">target_to_source</option>
+      </select>
+    </div>
+    <div class="col-lg-2">
+      <label>Head</label>
+      <select
+        id="head_selector"
+        onchange="current_head=this.value;change_head(current_head);"
+      >
+        <option value="Number.POSITIVE_INFINITY">All</option>
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="avg">Average</option>
+      </select>
+    </div>
+  </div>
+  <hr />
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-5">
+        <h5>Source Sentence</h5>
+        <div class="well" id="source_sentence"></div>
+        <h5>Target Sentence</h5>
+        <div class="well" id="target_sentence"></div>
+      </div>
+      <div class="col-lg-7">
+        <div class="slidecontainer">
+          <h5 id="threshold">
+            Threshold=(0%)*max_attention (Assume attention below threshold as 0)
+          </h5>
+          <input
+            type="range"
+            min="0"
+            max="100"
+            value="0"
+            class="slider"
+            id="slider"
+          />
+          <script>
+            var slider = document.getElementById("slider");
+            var output = document.getElementById("threshold");
+            slider.oninput = function() {
+              output.innerHTML =
+                "Threshold=(" +
+                this.value +
+                "%)*max_attention (Assume attention below threshold as 0)";
+              threshold = this.value;
+              if (view_mode == "heatmap") {
+                draw_heatmap(
+                  Number(threshold),
+                  attention_type_upper,
+                  attention_type_lower
+                );
+              } else {
+                change_threshold((threshold = Number(threshold)));
+              }
+            };
+          </script>
+        </div>
+        <div id="histogram"></div>
+      </div>
+    </div>
+  </div>
+  <script>
+    draw_all(
+      0,
+      layer,
+      current_head,
+      (head_total = 8),
+      attention_type_upper,
+      attention_type_lower
+    );
+    set_source_and_target(current_index);
+    window.addEventListener("resize", function(event) {
+      adjust_graph();
+    });
+  </script>
+</html>

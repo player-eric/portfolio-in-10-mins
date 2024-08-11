@@ -1,0 +1,33 @@
+/* body {
+  margin: 0px;
+  overflow: hidden;
+  color: white;
+  text-align: center;
+} */
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+/* 
+#scene-container {
+  position: absolute;
+  width: 1000px;
+  height: 1000px;
+} */
+
+#scene-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+#word,
+#selected_word {
+  position: absolute;
+  font: Bold 20px Arial;
+}
+
+#list_to_expand li p:hover {
+  background-color: #eee;
+}
