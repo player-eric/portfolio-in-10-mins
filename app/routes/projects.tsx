@@ -131,7 +131,7 @@ export default function Projects() {
           performance on detecting inappropriately worn masks. For more details,
           please refer to this{" "}
           <a
-            href="https://player-eric.com/resources/CoverYourNoseReport.pdf"
+            href="files/CoverYourNoseReport.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="underline underline-offset-4"
