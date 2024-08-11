@@ -1,8 +1,10 @@
 import type { MetaFunction } from "@remix-run/node";
 import ExperienceCard from "~/components/experience/ExperienceCard";
 import ExperienceCardWithPicture from "~/components/experience/ExperienceCardWithPicture";
+import ProjectWithPicture from "~/components/projects/ProjectWithPicture";
 
 import configs from "~/configs/configs";
+import PublicationWithPicture from "~/publications/PublicationWithPicture";
 
 export const meta: MetaFunction = () => {
   return [
@@ -60,7 +62,7 @@ export default function About() {
                 </p>
                 <p className="font-courierPrime text-xl mx-6">
                   Outside of work, I enjoy photography📷, cycling🚴️, and
-                  playing guitar🎸.
+                  watching movies🎬.
                 </p>
               </div>
             </div>
@@ -87,21 +89,11 @@ export default function About() {
         .
       </ExperienceCard>
       <ExperienceCard
-        title="Brown Visual Computing"
+        title="Brown Visual Computing Lab"
         date="July 2021 - April 2022"
         location="Providence, RI"
       >
-        <p className="font-courierPrime text-xl mt-2">
-          Contributor to{" "}
-          <a
-            href="https://onlinelibrary.wiley.com/doi/abs/10.1111/cgf.14505"
-            target="_blank"
-            className="underline underline-offset-4 italic"
-          >
-            Neural fields in visual computing and beyond
-          </a>
-          .
-        </p>
+        <p className="font-courierPrime text-xl mt-2">Research Assistant.</p>
       </ExperienceCard>
       <ExperienceCard
         title="InterSystems Corporation"
@@ -154,6 +146,20 @@ export default function About() {
           Bachelor of Engineering in Computer Science
         </p>
       </ExperienceCardWithPicture>
+
+      <h1 className="font-blackOpsOne text-4xl mt-6 mb-2">Publications</h1>
+      <PublicationWithPicture
+        title="Neural Fields in Visual Computing and Beyond"
+        pictureFileName="neuralFields.png"
+        webLink="https://neuralfields.cs.brown.edu/eg22.html"
+        pdfLink="https://arxiv.org/pdf/2111.11426"
+      ></PublicationWithPicture>
+      <PublicationWithPicture
+        title="The NiuTrans System for the WMT20 Quality Estimation Shared Task"
+        pictureFileName="mtqe.png"
+        webLink="https://aclanthology.org/2020.wmt-1.117/"
+        pdfLink="https://www.statmt.org/wmt20/pdf/2020.wmt-1.117.pdf"
+      ></PublicationWithPicture>
     </div>
   );
 }

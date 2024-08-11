@@ -4,7 +4,6 @@ const configs: Configs = {
   routes: [
     { label: "About", url: "about" },
     { label: "Projects", url: "projects" },
-    { label: "Photography", url: "photography" },
     { label: "Ramen", url: "ramen" },
     { label: "Footprints", url: "footprints" },
   ],
