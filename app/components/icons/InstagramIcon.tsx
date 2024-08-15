@@ -7,8 +7,7 @@ const InstagramIcon: React.FC = () => {
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <title>instagram [#167]</title>
-      <desc>Created with Sketch.</desc>
+      <title>instagram</title>
       <defs></defs>
       <g
         id="Page-1"

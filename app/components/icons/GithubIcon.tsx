@@ -7,8 +7,7 @@ const GithubIcon: React.FC = () => {
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <title>github [#142]</title>
-      <desc>Created with Sketch.</desc>
+      <title>github</title>
       <defs></defs>
       <g
         id="Page-1"

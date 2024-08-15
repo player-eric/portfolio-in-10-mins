@@ -9,6 +9,7 @@ import { Navbar } from "./components/Navbar";
 import stylesheet from "~/tailwind.css?url";
 import { LinksFunction } from "@remix-run/node";
 import configs from "./configs/configs";
+import About from "./routes/about";
 
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: stylesheet },
@@ -19,7 +20,13 @@ export function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <head>
+        <title>Shiqin Yan</title>
         <meta charSet="utf-8" />
+        <meta name="description" content="About Shiqin Yan" />
+        <meta
+          name="keywords"
+          content="personal, website, about, profile,, Shiqin Yan"
+        />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <Meta />
         <Links />
@@ -48,9 +55,10 @@ export default function App() {
 }
 
 export function HydrateFallback() {
+  // for crawlers
   return (
     <div className="w-full flex items-center">
-      <h1>Loading...</h1>
+      <About></About>
     </div>
   );
 }

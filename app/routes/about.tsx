@@ -2,7 +2,6 @@ import type { MetaFunction } from "@remix-run/node";
 import ExperienceCard from "~/components/experience/ExperienceCard";
 import ExperienceCardWithPicture from "~/components/experience/ExperienceCardWithPicture";
 import BackToTopButton from "~/components/layout/BackToTop";
-import ProjectWithPicture from "~/components/projects/ProjectWithPicture";
 
 import configs from "~/configs/configs";
 import PublicationWithPicture from "~/publications/PublicationWithPicture";
