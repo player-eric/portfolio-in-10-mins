@@ -46,7 +46,7 @@ export default function About() {
               />
               <div>
                 <p className="font-courierPrime text-xl mx-6">
-                  I am a software engineer at{" "}
+                  I am a software engineer working at{" "}
                   <a
                     href="https://www.bloomberg.com/company/stories/meet-the-team-data-technologies-engineering/"
                     target="_blank"
