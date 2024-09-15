@@ -2,7 +2,6 @@ import type { MetaFunction } from "@remix-run/node";
 import ExperienceCard from "~/components/experience/ExperienceCard";
 import ExperienceCardWithPicture from "~/components/experience/ExperienceCardWithPicture";
 import BackToTopButton from "~/components/layout/BackToTop";
-import ProjectWithPicture from "~/components/projects/ProjectWithPicture";
 
 import configs from "~/configs/configs";
 import PublicationWithPicture from "~/publications/PublicationWithPicture";
@@ -51,7 +50,7 @@ export default function About() {
                   <a
                     href="https://www.bloomberg.com/company/stories/meet-the-team-data-technologies-engineering/"
                     target="_blank"
-                    className=" underline underline-offset-4"
+                    className="text-blue-600"
                   >
                     Bloomberg
                   </a>
@@ -81,7 +80,7 @@ export default function About() {
           <a
             href="https://www.openfigi.com/"
             target="_blank"
-            className="underline underline-offset-4"
+            className="text-blue-600"
           >
             openfigi.com
           </a>{" "}
@@ -89,7 +88,7 @@ export default function About() {
           <a
             href="https://www.openfigi.com/api"
             target="_blank"
-            className="underline underline-offset-4"
+            className="text-blue-600"
           >
             OpenFIGI API
           </a>
@@ -113,7 +112,7 @@ export default function About() {
           <a
             href="https://www.intersystems.com/products/trakcare/"
             target="_blank"
-            className="underline underline-offset-4"
+            className="text-blue-600"
           >
             TrakCare
           </a>

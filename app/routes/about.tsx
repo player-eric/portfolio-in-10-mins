@@ -50,7 +50,7 @@ export default function About() {
                   <a
                     href="https://www.bloomberg.com/company/stories/meet-the-team-data-technologies-engineering/"
                     target="_blank"
-                    className=" underline underline-offset-4"
+                    className="text-blue-600"
                   >
                     Bloomberg
                   </a>
@@ -80,7 +80,7 @@ export default function About() {
           <a
             href="https://www.openfigi.com/"
             target="_blank"
-            className="underline underline-offset-4"
+            className="text-blue-600"
           >
             openfigi.com
           </a>{" "}
@@ -88,7 +88,7 @@ export default function About() {
           <a
             href="https://www.openfigi.com/api"
             target="_blank"
-            className="underline underline-offset-4"
+            className="text-blue-600"
           >
             OpenFIGI API
           </a>
@@ -112,7 +112,7 @@ export default function About() {
           <a
             href="https://www.intersystems.com/products/trakcare/"
             target="_blank"
-            className="underline underline-offset-4"
+            className="text-blue-600"
           >
             TrakCare
           </a>

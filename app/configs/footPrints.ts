@@ -396,6 +396,21 @@ export const footPrintsWithPicture: FootPrintData[] = [
     position: [42.5195, -70.8967],
     image: "Salem.jpg",
   },
+  {
+    title: "Yellowstone National Park",
+    position: [44.428, -110.5885],
+    image: "Yellowstone.jpg",
+  },
+  {
+    title: "Grand Teton National Park",
+    position: [43.7904, -110.6818],
+    image: "GrandTeton.jpg",
+  },
+  {
+    title: "Bozeman",
+    position: [45.6769, -111.0429],
+    image: "Bozeman.jpg",
+  },
 ];
 
 export const footPrintsWithoutPicture: FootPrintData[] = [
